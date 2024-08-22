@@ -1,8 +1,12 @@
-composer install
-php artisan key:generate
-composer require laravel/ui
-npm install
-npm run dev
-php artisan ui bootstrap --auth
-php artisan serve
-php artisan migrate:fresh --seed
+** PHP VERSION 8 **
+** CMS LARAVEL 9 **
+** BD MYSQL **
+
+** first Steps commands local **
+** 1. composer install
+** 2. php artisan key:generate
+** 3 npm install
+** 4  npm run dev
+** 5 php artisan serve
+** 6 php artisan migrate:fresh --seed
+

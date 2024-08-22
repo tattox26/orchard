@@ -17,7 +17,7 @@
         }
     </style>
      <div class="container mt-4">
-        <h1>Edit Menu</h1>
+        <h1>Edit Banner</h1>
 
         <div class="dd" id="nestable">
             <ol class="dd-list">
@@ -38,7 +38,7 @@
             </ol>
         </div>
 
-        <button id="save-order" class="btn btn-primary mt-3">Save Order</button>
+        <button id="save-order" class="btn btn-primary mt-3">Save Banner</button>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
