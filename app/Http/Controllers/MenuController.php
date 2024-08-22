@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Menu;
+use Illuminate\Support\Facades\Storage;
 
 class MenuController extends Controller
 {
@@ -29,7 +30,7 @@ class MenuController extends Controller
         return response()->json(['status' => 'success', 'message' => 'Menu order updated successfully!']);
     }
 
-     private function updateMenuOrder($items, $parentId)
+    public function updateMenuOrder($items, $parentId)
     {
         foreach ($items as $index => $item) {
             $menu = Menu::find($item['id']);
@@ -40,5 +41,22 @@ class MenuController extends Controller
                 $this->updateMenuOrder($item['children'], $menu->id);
             }
         }
+    }
+
+    public function saveImg(Request $request){
+
+        if ($request->hasFile('rootA')) {
+            $image = $request->file('rootA');    
+            $ext = $image->getClientOriginalExtension();          
+            $newName = "rootA.".$ext ;       
+            $image->storeAs('/', $newName, 'public');           
+        }
+        if ($request->hasFile('rootB')) {
+            $image = $request->file('rootB');    
+            $ext = $image->getClientOriginalExtension();          
+            $newName = "rootB.".$ext ;       
+            $image->storeAs('/', $newName, 'public');
+        }
+        return redirect()->route('editMenu')->with('success', 'Imagen save');
     }
 }

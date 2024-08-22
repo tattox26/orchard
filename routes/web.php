@@ -22,6 +22,7 @@ Route::group(['middleware' => ['auth:web,api']], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/menus', [App\Http\Controllers\MenuController::class, 'index'])->name('menus');
     Route::get('/editMenu', [App\Http\Controllers\MenuController::class, 'edit'])->name('editMenu');
+    Route::post('/saveImg', [App\Http\Controllers\MenuController::class, 'saveImg'])->name('saveImg');
     Route::post('/update-menu-order', [App\Http\Controllers\MenuController::class, 'updateOrder'])->name('menu.updateOrder');
     Route::resource('products', App\Http\Controllers\ProductController::class);
     Route::get('/block', [App\Http\Controllers\ProductController::class, 'block'])->name('block');

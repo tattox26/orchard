@@ -33,8 +33,7 @@ class PluginController extends Controller
             }
 
             return redirect()->route('settings')->with('success', 'Setting save');
-        } catch (\Throwable $th) {   
-            dd($th);         
+        } catch (\Throwable $th) {            
             return redirect()->route('settings')->withErrors(['msg' =>$th->getMessage()]);
         }
     }

@@ -10,8 +10,7 @@ use Illuminate\Support\Facades\Storage;
 class ProductController extends Controller
 {
     public function index()
-    {
-        
+    {        
         $products = Product::all();
         return view('products.index', compact('products'));
     }
@@ -33,8 +32,7 @@ class ProductController extends Controller
         $products = Product::where("flag",1)->get();
         $count = count($products);
         if($count == 5 && $request->flag == 1){
-            return redirect()->route('products.index')->withErrors(['msg' => 'You can´t create because you have more 5 Flag select']);
-            
+            return redirect()->route('products.index')->withErrors(['msg' => 'You can´t create because you have more 5 Flag select']);            
         }else{
             $request->validate([
                 'name' => 'required|string|max:255',
@@ -57,8 +55,7 @@ class ProductController extends Controller
     }
 
     public function update(Request $request, Product $product)
-    {   
-        
+    {           
         if(!isset($request->flag) ){
             $request['flag'] = 0;
         }else{
