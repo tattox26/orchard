@@ -5,4 +5,4 @@ npm install
 npm run dev
 php artisan ui bootstrap --auth
 php artisan serve
-php artisan migrate
+php artisan migrate:fresh --seed
