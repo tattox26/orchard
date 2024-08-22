@@ -26,7 +26,6 @@ class MenuController extends Controller
         $menuOrder = $request->input('order');
         // Recorre la estructura y actualiza cada elemento en la base de datos
         $this->updateMenuOrder($menuOrder, null);
-
         return response()->json(['status' => 'success', 'message' => 'Menu order updated successfully!']);
     }
 
@@ -37,7 +36,6 @@ class MenuController extends Controller
             $menu->parent_id = $parentId;
             $menu->order = $index;
             $menu->save();
-
             if (isset($item['children'])) {
                 $this->updateMenuOrder($item['children'], $menu->id);
             }
