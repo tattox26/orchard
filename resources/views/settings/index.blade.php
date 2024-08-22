@@ -12,7 +12,7 @@
         @csrf
         <div class="form-group">
             <label for="name">Tittle</label>
-            <input type="text" class="form-control" id="tittle" name="tittle" value="{{ $setting->tittle }}" required>
+            <input type="text" class="form-control" id="tittle" name="tittle" value="{{ $setting->tittle }}"  required>
         </div>
         <div class="form-group">
             <label for="summary">Name Admin</label>

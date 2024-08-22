@@ -9,7 +9,7 @@ class PluginController extends Controller
 {
     public function index()
     {
-        $setting = Setting::first();
+        $setting = Setting::first();       
         return view('settings.index', compact('setting'));
     }
     public function store(Request $request)
